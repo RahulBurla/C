@@ -1,0 +1,16 @@
+def check_points_on_line(n, points):
+    if n == 0:
+        return "NO"
+    x_coords = [point[0] for point in points]
+    y_coords = [point[1] for point in points]
+    all_x_same = all(x == x_coords[0] for x in x_coords)
+    all_y_same = all(y == y_coords[0] for y in y_coords) 
+    if all_x_same or all_y_same:
+        return "YES"
+    else:
+        return "NO"
+
+n = int(input())
+points = [tuple(map(int,input().split())) for i in range(n)]
+
+print(check_points_on_line(n, points))
